@@ -1,0 +1,28 @@
+.navBar{
+    width: 99%;
+    background-color: rgb(20, 122, 145);
+    align-items:center;
+    justify-content: space-between;
+    padding: 5px, 5px;
+    margin: 10px, 10px;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 700;
+    color:black;
+}
+.btnNav{
+    display: flex;
+    display: inline;
+    align-items:flex-end;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin: 15px;
+    border-radius: 15px;
+    border:none
+}
+
+
+
+
