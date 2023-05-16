@@ -1,15 +1,16 @@
-
-import NavBar from './components/navBar/navBar';
-import ItemListContainer from './components/items/itLiCont/itemListContainer';
-
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ".//helpers/Styles.css"
 
 function App() {
   return (
-    <div className='App'>
-      <NavBar />
-      <ItemListContainer greting={"Bienvenidos !!"}/>
-    </div>
-  );
-}
-
-export default App;
+      <>
+        <div>
+            <NavBar />
+        </div>
+        <div>
+          <ItemListContainer />
+        </div>  
+      </>
+        )}
+export default App
