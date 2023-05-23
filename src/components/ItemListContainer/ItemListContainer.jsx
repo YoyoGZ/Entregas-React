@@ -1,26 +1,23 @@
-import libros from "../data/libros"
-import ItemCard from "../Items/ItemCard/ItemCard";
-const ItemListContainer = () =>{
-    console.log(libros);
-    return (
-        <div>
-            ItemListContainer
-            {libros.map((itemLibros) =>
-            <ItemCard
-            key={itemLibros.id}
-            id={itemLibros.id}
-            titulo={itemLibros.titulo}
-            autor={itemLibros.autor}
-            genero={itemLibros.genero}
-            img={itemLibros.img}
-            precio={itemLibros.precio}
-            stock={itemLibros.stock}
-            />
-            )
-          }
-          
-        </div>
-    
+import { useState,  useEffect } from "react";
+import { getLibros } from "../data/libros";
+import ItemList from "../Items/ItemList/ItemList"
+const ItemListContainer = ({ greeting }) =>{
+
+    const [libros, setLibros] = useState ([])
+        useEffect(() => {
+            getLibros()
+                .then(response => {
+                    setLibros(response)
+                })
+                .catch(error =>{
+                    console.error(error)
+                })            
+    }, [])
+            return (
+                <div>
+                    <p className="greeting">{greeting = "Bienvenidos a Nuestra Tienda On line"}</p>
+                    <ItemList libros={libros}/>
+                </div>
     )
 }
 

@@ -2,23 +2,23 @@ import CartWidget from "../cartWidget/CartWidget";
 import "../../helpers/Styles.css"
 const NavBar = () => {
     return (
-            <nav className= "navBar itemNav">
-                <a href="/#" className="logo"><h1 className="h1">The White Rabbit</h1></a>
+            <nav className= "navBar">
+                <a href="/#" className="logo"><h1 className="titulo">The White Rabbit</h1></a>
                     <ul className="itemNav">
                         <li className="itemNav">
-                            <a href="/#">Nosotros</a>
+                            <a className="itemNav" href="/#">Nosotros</a>
                         </li>
                         <li className="itemNav">
-                            <a href="/#">Nuestro Catalogo</a>
+                            <a className="itemNav" href="/#">Nuestro Catalogo</a>
                         </li>
                         <li className="itemNav">
-                            <a href="/#">Mi Cuenta</a>
+                            <a className="itemNav" href="/#">Mi Cuenta</a>
                         </li>
                         <li className="itemNav">
-                            <a href="/#">Favoritos</a>
+                            <a className="itemNav" href="/#">Favoritos</a>
                         </li>
                         <li className="itemNav">
-                            <a href="/#">Contacto</a>
+                            <a className="itemNav" href="/#">Contacto</a>
                         </li>
                         <div className="cart">
                             <CartWidget />
