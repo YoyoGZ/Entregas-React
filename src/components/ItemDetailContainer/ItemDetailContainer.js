@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { getLibrosById } from "../data/libros";
-import ItemCard from "../Items/ItemCard/ItemCard";
+import CardDetail from "../Items/CardDetail/CardDetail";
 const ItemDetailContainer = () =>{
 
-    const [libros, setLibros] = useState (null)
+    const [libros, setLibros] = useState ([])
         useEffect(() => {
             getLibrosById()
                 .then(response => {
@@ -14,8 +14,8 @@ const ItemDetailContainer = () =>{
                 })            
     }, [])
         return (
-            <div className="itemDetCont">
-                <ItemCard {...libros} ></ItemCard>
+            <div>
+                <CardDetail {...libros} ></CardDetail>
             </div>
     )
 }

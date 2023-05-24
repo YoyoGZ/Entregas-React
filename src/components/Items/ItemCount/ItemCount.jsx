@@ -13,11 +13,11 @@ function ItemCount ({ stock }) {
   }
   
   return (
-    <div className="itemCount">
+    <div className="btns-count">
         <div>
           <Flex>
             <button className="btn-countMin font-xl" onClick={handleRest}>-</button>
-            <p>{count}</p>
+            <p className="count">{count}</p>
             <button className="btn-countMas font-xl" onClick={handleSuma}>+</button>
           </Flex>  
         </div>
