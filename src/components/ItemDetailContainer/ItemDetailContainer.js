@@ -1,21 +1,35 @@
 import { useState, useEffect } from "react";
-import { getLibrosById } from "../data/libros";
 import CardDetail from "../Items/CardDetail/CardDetail";
+import { useParams } from "react-router-dom";
+import libros from "../data/libros";
+
+
 const ItemDetailContainer = () =>{
 
-    const [libros, setLibros] = useState ([])
+// ------ AsynMock Promise -------
+    function getLibroById(id) {
+        return new Promise ((resolve) => {
+            setTimeout (() => {
+                const buscaItem = libros.find((libro => libro.id === Number(id)))
+                resolve(buscaItem);
+            }, 500);
+        })
+    }
+    const [libro, setLibro] = useState ({})
+    const { id } = useParams().id;
+    console.log(id);
         useEffect(() => {
-            getLibrosById()
+            getLibroById(id)
                 .then(response => {
-                    setLibros(response)
+                    setLibro(response)
                 })
                 .catch(error =>{
                     console.error(error)
                 })            
-    }, [])
+    }, [id])
         return (
             <div>
-                <CardDetail {...libros} ></CardDetail>
+                <CardDetail {...libro} ></CardDetail>
             </div>
     )
 }

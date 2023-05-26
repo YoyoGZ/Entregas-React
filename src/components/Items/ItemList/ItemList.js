@@ -1,18 +1,18 @@
 import ItemCard from "../ItemCard/ItemCard"
 
-const ItemList = ({libros }) =>{
+const ItemList = ({ libros }) =>{
     return (
         <div className="container" >
-            {libros.map((itemLibros) =>
+            {libros.map((libros) =>
             <ItemCard
-            key={itemLibros.id}
-            id={itemLibros.id}
-            titulo={itemLibros.titulo}
-            autor={itemLibros.autor}
-            genero={itemLibros.genero}
-            img={itemLibros.img}
-            precio={itemLibros.precio}
-            stock={itemLibros.stock}
+            key={libros.id}
+            id={libros.id}
+            titulo={libros.titulo}
+            autor={libros.autor}
+            genero={libros.genero}
+            img={libros.img}
+            precio={libros.precio}
+            stock={libros.stock}
             />
             )
           }          
