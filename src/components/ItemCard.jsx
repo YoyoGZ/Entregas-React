@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import libros from "../../data/libros";
+import libros from "./data/libros";
 
+const ItemCard = ({id, titulo, autor, img, genero, precio, stock}) => {
 
-const ItemCard = ({titulo, autor, img, genero, precio, stock}) => {
-  const [IsFavorite , setIsFavorite] = useState (false);
+const [IsFavorite , setIsFavorite] = useState (false);
 
 let classNameFavorite;
 if (IsFavorite === false) {
@@ -22,11 +22,10 @@ function handleClickFav (){
             </span>
                 <div className="item-card_header">
                   <h2 className="h2">{titulo}</h2>
-                  <h2 className="h2">{autor}</h2>
+                  <h3 className="h2">{autor}</h3>
                 </div>
                 <div className="item-card_img">
                   <img src={img} alt="imagen"></img>
-                  <br/>
                   <small className="card-genero">{genero}</small>
                 </div>
                 <div> 

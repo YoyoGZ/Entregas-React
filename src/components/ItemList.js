@@ -1,4 +1,4 @@
-import ItemCard from "../ItemCard/ItemCard"
+import ItemCard from "./ItemCard"
 
 const ItemList = ({ libros }) =>{
     return (

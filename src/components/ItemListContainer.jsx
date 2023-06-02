@@ -1,8 +1,18 @@
 import { useState,  useEffect } from "react";
-import { getLibros } from "../data/libros";
-import ItemList from "../Items/ItemList/ItemList"
-const ItemListContainer = ({ greeting }) =>{
+import ItemList from "./ItemList"
+import libros from "./data/libros";
 
+// ------ AsynMock Promise -------
+function getLibros() {
+    return new Promise ((resolve) => {
+        setTimeout (() => {
+            resolve(libros)
+        }, 2000)
+    }
+)}
+console.log(libros);
+
+const ItemListContainer = ({ greeting }) =>{
     const [libros, setLibros] = useState ([])
         useEffect(() => {
             getLibros()

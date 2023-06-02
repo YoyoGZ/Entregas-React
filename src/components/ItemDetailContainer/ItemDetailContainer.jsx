@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import CardDetail from "../Items/CardDetail/CardDetail";
 import { useParams } from "react-router-dom";
 import libros from "../data/libros";
-
+import CardDetail from "./CardDetail";
 
 const ItemDetailContainer = () =>{
 
@@ -17,7 +16,6 @@ const ItemDetailContainer = () =>{
     }
     const [libro, setLibro] = useState ({})
     const { id } = useParams().id;
-    console.log(id);
         useEffect(() => {
             getLibroById(id)
                 .then(response => {
