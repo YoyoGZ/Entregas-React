@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import libros from "./data/libros";
 
-const ItemCard = ({id, titulo, autor, img, genero, precio, stock}) => {
+const ItemCard = ({titulo, autor, img, genero, precio, stock}) => {
 
 const [IsFavorite , setIsFavorite] = useState (false);
 

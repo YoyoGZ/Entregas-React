@@ -10,7 +10,7 @@ function App() {
       <NavBar />
         <Routes>
           <Route path= "/" element={ <ItemListContainer />}/>
-          <Route path= "CardDetail/:id" element={<ItemDetailContainer/>}/>
+          <Route path= "ItemList/:id" element={<ItemDetailContainer/>}/>
           <Route path= "/Clasicos" element={<h4> Error 404 - Page not found</h4>}/>
           <Route path= "/Novelas" element={<h4> Error 404 - Page not found</h4>}/>
           <Route path= "/Ensayos" element={<h1> Error 404 - Page not found</h1>}/>

@@ -15,7 +15,7 @@ const ItemDetailContainer = () =>{
         })
     }
     const [libro, setLibro] = useState ({})
-    const { id } = useParams().id;
+    const { id } = useParams();
         useEffect(() => {
             getLibroById(id)
                 .then(response => {
