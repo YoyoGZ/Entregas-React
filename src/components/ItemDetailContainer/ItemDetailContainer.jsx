@@ -25,6 +25,7 @@ const ItemDetailContainer = () =>{
                     console.error(error)
                 })            
     }, [id])
+    
         return (
             <div>
                 <CardDetail {...libro} ></CardDetail>

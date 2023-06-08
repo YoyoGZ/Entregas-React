@@ -2,23 +2,24 @@ import Flex from "./Flex"
 import { useState } from "react"
 
 function ItemCount ({ stock }) {
-  const [count, setCount] = useState(1);
+  let [count, setCount] = useState(1);
 
-  function handleSuma () {
-    if (count < stock) setCount(count+1);
+  const handleSuma = () => {
+    if (count < stock) setCount(count + 1);
   }
 
-  function handleRest () {
-    if (count > 1) setCount(count-1);
+  const handleResta = () => {
+    if (count > 1) count = count - 1;
   }
   
   return (
-    <div className="btns-count">
+    <div className="box-ItCount">
         <div>
           <Flex>
-            <button className="btn-countMin font-xl" onClick={handleRest}>-</button>
+            <button className="btn-countMin font-xl" onClick={handleResta}>-</button>
             <p className="count">{count}</p>
             <button className="btn-countMas font-xl" onClick={handleSuma}>+</button>
+            <button className="btn-sumaCart">Agregar a Carrito</button>
           </Flex>  
         </div>
     </div>

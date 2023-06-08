@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import libros from "./data/libros";
+// import libros from "./data/libros";
 
-const ItemCard = ({titulo, autor, img, genero, precio, stock}) => {
+const ItemCard = ({id,titulo, autor, img, genero, precio, stock}) => {
 
 const [IsFavorite , setIsFavorite] = useState (false);
 
@@ -33,7 +33,7 @@ function handleClickFav (){
                   <p className="h4"> Cantidad Disponible = {stock}</p>
                 </div>
                 <div>
-                  <Link className="btn-MasInfo" to = {`/ItemList/${libros.id}`}> Mas Informacion </Link>
+                  <Link className="btn-MasInfo" to = {`/ItemList/${id}`}> Mas Informacion </Link>
                 </div>
             </div>               
   )
