@@ -1,6 +1,22 @@
+import { useState, useContext} from "react";
 import ItemCount from "./ItemCount"
+import { Link } from "react-router-dom";
+import { cartContext } from "../../context/CartContext";
 
-const CardDetail = ({id, titulo, autor, img, genero, precio, stock}) => {
+const CardDetail = ( {id, titulo, autor, img, genero, precio, stock} ) => {
+
+  const { cart} = useContext(cartContext);
+    console.log("context:", cart);
+
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const handleOnAdd = (quantity) =>{
+    setQuantityAdded(quantity)
+  }
+
+function onAddToCart() {
+
+  alert (`Agregaste ${titulo} en el Cartito`)
+}
   return (
           <div className="cardDetail">
                 <div className="cardDetail_header">
@@ -17,10 +33,18 @@ const CardDetail = ({id, titulo, autor, img, genero, precio, stock}) => {
                   <small className="cardDetail-genero">{genero}</small>
                   <h4 className="cardDetail_precio"> Precio: $ {precio}</h4>
                   <p className="cant-disp"> Cantidad Disponible = {stock}</p>
-                  <ItemCount />
+                  <footer>
+                    {
+                      quantityAdded > 0 ? (
+                        <Link to ="/../Navbar/cartWidget" className="btn-endSale"> Terminar la compra </Link>
+                      ) : (
+                      <ItemCount  onAddToCart={onAddToCart} initial= {1} stock = {stock} addItem={handleOnAdd}  />
+                      )
+                    }                   
+                  </footer>                  
                 </div>
             </div>               
-  )
+      )
 }
 
 export default CardDetail

@@ -27,15 +27,6 @@ const ItemListContainer = ({ greeting }) =>{
                 }})
     },[genero])
 
-    //     useEffect(() => {
-    //         getLibros()
-    //             .then(response => {
-    //                 setLibros(response)
-    //             })
-    //             .catch(error =>{
-    //                 console.error(error)
-    //             })            
-    // }, )
             return (
                 <div>
                     <p className="greeting">{greeting = "Bienvenidos a Nuestra Tienda On line"}</p>

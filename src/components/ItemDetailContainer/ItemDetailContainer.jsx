@@ -14,7 +14,7 @@ const ItemDetailContainer = () =>{
             }, 500);
         })
     }
-    const [libro, setLibro] = useState ({})
+    const [libro, setLibro] = useState ({});
     const { id } = useParams();
         useEffect(() => {
             getLibroById(id)
