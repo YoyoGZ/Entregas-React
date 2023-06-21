@@ -1,20 +1,13 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import libros from "../data/libros";
-import CardDetail from "./CardDetail";
+import { useState, useEffect, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
+import ItemCount from "./ItemCount"
+import { cartContext } from "../../context/CartContext";
+import Loader from "../Loader";
+import { getLibroById } from "../../_services/firebase";
 
-const ItemDetailContainer = () =>{
-
-// ------ AsynMock Promise -------
-    function getLibroById(id) {
-        return new Promise ((resolve) => {
-            setTimeout (() => {
-                const buscaItem = libros.find((libro => libro.id === Number(id)))
-                resolve(buscaItem);
-            }, 500);
-        })
-    }
+    const ItemDetailContainer = () =>{
     const [libro, setLibro] = useState ({});
+    
     const { id } = useParams();
         useEffect(() => {
             getLibroById(id)
@@ -25,11 +18,53 @@ const ItemDetailContainer = () =>{
                     console.error(error)
                 })            
     }, [id])
-    
-        return (
-            <div>
-                <CardDetail {...libro} ></CardDetail>
+
+// ---- Context ------
+
+    const { cart } = useContext(cartContext);
+    console.log("context:", cart);
+
+    // function onAddToCart(){
+    // addItem(libro, count);
+    // alert(`Agregaste ${count} ${libro.titulo} al carrito`)
+    // }
+
+// ----- Agrega prod al carrito ------
+    const [quantityAdded, setQuantityAdded] = useState(0);
+    const handleOnAdd = (quantity) =>{
+    setQuantityAdded(quantity)
+    }
+
+    if(libro) {
+    return (
+        <div className="cardDetail">
+            <div className="cardDetail_header">
+                <p className='h4'> N° de Catalogo: {libro.id}</p>
+                <h2 className="cardDetail_header">{libro.titulo}</h2>
+                <h2 className="cardDetail_header">{libro.autor}</h2>
             </div>
+            <div className="cardDetail_img">
+                <img src={libro.img} alt="imagen"></img>
+                <br/>
+                <p className="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quidem. Obcaecati sit unde, rem totam incidunt necessitatibus eaque amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor omnis dignissimos minus tempore reiciendis adipisci molestiae voluptates similique sapiente placeat</p>
+            </div>
+            <div>
+                <small className="cardDetail-genero">{libro.genero}</small>
+                <h4 className="cardDetail_precio"> Precio: $ {libro.precio}</h4>
+                <p className="cant-disp"> Cantidad Disponible = {libro.stock}</p>
+                <footer>
+                {
+                    quantityAdded > 0 ? (
+                    <Link to ="/../Navbar/cartWidget" className="btn-endSale"> Terminar la compra </Link>
+                    ) : (
+                    <ItemCount initial= {1} stock = {libro.stock} addItem={handleOnAdd} />
+                    )
+                }                   
+                </footer>                  
+            </div>
+        </div>    
     )
+}
+return <Loader/>;
 }
 export default ItemDetailContainer

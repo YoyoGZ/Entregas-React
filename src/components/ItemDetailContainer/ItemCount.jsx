@@ -1,7 +1,7 @@
 import Flex from "./Flex"
 import { useState } from "react"
 
-function ItemCount ({ stock, onAddToCart }) {
+function ItemCount ({ stock, addItem }) {
   let [count, setCount] = useState(1);
 
   const handleSuma = () => {
@@ -19,7 +19,7 @@ function ItemCount ({ stock, onAddToCart }) {
             <button className="btn-countMin font-xl" onClick={handleResta}>-</button>
             <p className="count">{count}</p>
             <button className="btn-countMas font-xl" onClick={handleSuma}>+</button>
-            <button className="btn-sumaCart" onClick={() => onAddToCart(count)} disabled={!stock}>Agregar al Carrito</button>
+            <button className="btn-sumaCart" onClick={() => addItem(count)} disabled={!stock}>Agregar al Carrito</button>
           </Flex>  
         </div>
     </div>

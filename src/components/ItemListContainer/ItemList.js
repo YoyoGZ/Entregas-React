@@ -1,7 +1,8 @@
+import Loader from "../Loader"
 import ItemCard from "./ItemCard"
 
-
 const ItemList = ({ libros }) =>{
+    if(libros.length === 0) return <Loader/>
     return (
         <div className="container" >
             {libros.map((libros) =>
@@ -12,6 +13,7 @@ const ItemList = ({ libros }) =>{
             autor={libros.autor}
             genero={libros.genero}
             img={libros.img}
+            descuento={libros.descuento}
             precio={libros.precio}
             stock={libros.stock}
             />

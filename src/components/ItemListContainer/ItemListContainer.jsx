@@ -1,16 +1,9 @@
 import { useState,  useEffect} from "react";
 import ItemList from "./ItemList"
-import libros from "../data/libros";
+// import libros from "../data/libros";
 import { useParams } from "react-router-dom";
+import { getLibros } from "../../_services/firebase";
 
-// ------ AsynMock Promise -------
-function getLibros() {
-    return new Promise ((resolve) => {
-        setTimeout (() => {
-            resolve(libros)
-        }, 1000)
-    }
-)}
 
 const ItemListContainer = ({ greeting }) =>{
     const [libros, setLibros] = useState ([]);

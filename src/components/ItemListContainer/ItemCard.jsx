@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 // import libros from "./data/libros";
 
-const ItemCard = ({id,titulo, autor, img, genero, precio, stock}) => {
+const ItemCard = ({id,titulo, autor, img, genero, descuento, precio, stock}) => {
 
 const [IsFavorite , setIsFavorite] = useState (false);
 
@@ -29,6 +29,7 @@ function handleClickFav (){
                   <small className="card-genero">{genero}</small>
                 </div>
                 <div> 
+                  {descuento && <small className="item-card-price">Descuento {descuento} %</small> }
                   <h4 className="item-card-price">Precio: $ {precio}</h4>
                   <p className="h4"> Cantidad Disponible = {stock}</p>
                 </div>
