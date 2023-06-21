@@ -5,7 +5,7 @@ import { cartContext } from "../../../context/CartContext";
 function ViewCart () {
     const {cart, removeItem} = useContext(cartContext)
   return (
-    <div>
+    <div className="Viewcart">
         <h2> Tu Carrito de Compras</h2>
         {cart.map((item) => (
             <ul key= {item.id}>

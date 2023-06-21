@@ -521,3 +521,16 @@ h3{
       transform: scale(1);
     }
   }
+
+  /* ---- Clases de ViewCart */
+
+.Viewcart{
+    display: flex;
+    margin-top: 150px;
+    height: 150px;
+    width: 350px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: grey;
+    color: whitesmoke;
+}

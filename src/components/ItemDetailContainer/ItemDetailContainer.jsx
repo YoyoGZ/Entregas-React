@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import ItemCount from "./ItemCount"
 import { cartContext } from "../../context/CartContext";
 import Loader from "../Loader";
-import { getLibroById } from "../../_services/firebase";
+import { getLibroById } from "../../_services/firebase";;
 
     const ItemDetailContainer = () =>{
     const [libro, setLibro] = useState ({});
@@ -21,18 +21,15 @@ import { getLibroById } from "../../_services/firebase";
 
 // ---- Context ------
 
-    const { cart } = useContext(cartContext);
+    const { cart, addItem } = useContext(cartContext);
     console.log("context:", cart);
-
-    // function onAddToCart(){
-    // addItem(libro, count);
-    // alert(`Agregaste ${count} ${libro.titulo} al carrito`)
-    // }
 
 // ----- Agrega prod al carrito ------
     const [quantityAdded, setQuantityAdded] = useState(0);
-    const handleOnAdd = (quantity) =>{
-    setQuantityAdded(quantity)
+    const handleOnAdd = (count) =>{
+    addItem(libro, count)
+    setQuantityAdded(count)
+    alert(`Agregaste ${count} ${libro.titulo} al carrito`)
     }
 
     if(libro) {
@@ -55,7 +52,7 @@ import { getLibroById } from "../../_services/firebase";
                 <footer>
                 {
                     quantityAdded > 0 ? (
-                    <Link to ="/../Navbar/cartWidget" className="btn-endSale"> Terminar la compra </Link>
+                    <Link to ="./Navbar/cartWidget/ViewCart" className="btn-endSale"> Terminar la compra </Link>
                     ) : (
                     <ItemCount initial= {1} stock = {libro.stock} addItem={handleOnAdd} />
                     )

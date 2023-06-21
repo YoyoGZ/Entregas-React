@@ -31,10 +31,6 @@ function removeItem(idDelete){
       setCart (cart.filter( item => item.id !== idDelete));
 }
 
-
-
-
-
  return(
 <cartContext.Provider value={ {cart, setCart, addItem, countItems, removeItem}}>
  {children}
