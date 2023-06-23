@@ -1,8 +1,13 @@
 import CartWidget from "./cartWidget/CartWidget";
 import "../../helpers/Styles.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const NavBar = () => {
+    let location = useLocation;
+    useEffect (() =>{
+        window.scrollTo (0,0);
+    }, [location]);
     return (
             <nav className= "navBar">
                 <Link to ="/#" className="logo"><h1 className="titulo">The White Rabbit</h1></Link>

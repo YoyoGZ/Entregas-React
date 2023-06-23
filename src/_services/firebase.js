@@ -42,5 +42,11 @@ export async function getGeneroLibro(genero){
     return { ...doc.data(), id: doc.id } 
 })
 return dataDocs;
+}
 
+export async function createOrder(data){
+    const orderCollectionRef = collection(db, "orders");
+
+    const respuesta = await (orderCollectionRef, data)
+    console.log("Orden Generada:", respuesta.id);
 }

@@ -105,7 +105,7 @@ a{
 .item-card {
     color: rgb(0, 0, 0);
     margin: 20px 15px;
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 25px;
     width: 280px;
     height: 480px;
@@ -526,11 +526,28 @@ h3{
 
 .Viewcart{
     display: flex;
-    margin-top: 150px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 20px;
     height: 150px;
-    width: 350px;
+    width: 1350px;
     align-items: center;
     justify-content: space-around;
-    background-color: grey;
+    background-color: rgb(90, 44, 44);
     color: whitesmoke;
+}
+
+.btn-comprarMas{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(203, 18, 18);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    border: none;
+    margin-left: 10px;
+    margin-right: 180px;
+    padding: 15px;
 }

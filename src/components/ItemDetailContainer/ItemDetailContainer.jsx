@@ -52,7 +52,7 @@ import { getLibroById } from "../../_services/firebase";;
                 <footer>
                 {
                     quantityAdded > 0 ? (
-                    <Link to ="./Navbar/cartWidget/ViewCart" className="btn-endSale"> Terminar la compra </Link>
+                    <Link to ="/cart" className="btn-endSale"> Terminar la compra </Link>
                     ) : (
                     <ItemCount initial= {1} stock = {libro.stock} addItem={handleOnAdd} />
                     )
