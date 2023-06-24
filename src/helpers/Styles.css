@@ -525,10 +525,12 @@ h3{
   /* ---- Clases de ViewCart */
 
 .titu-VC{
-    position: start;
+    
     display:flex;
+    position: start;
     margin-top: 5px;
-    margin-left: 25px;
+    margin-left: -215px;
+    margin-bottom: 10px;
     
 
 
@@ -541,7 +543,6 @@ h3{
     padding-left: 20px;
     height: 300px;
     width: 1350px;
-    align-items: center;
     justify-content: space-around;
     background-color: rgb(90, 44, 44);
     color: whitesmoke;
@@ -561,7 +562,7 @@ h3{
 .btn-comprarMas{
     display: flex;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 5px;
     color: rgb(203, 18, 18);
     text-align: center;
     font-size: 1rem;
@@ -569,5 +570,7 @@ h3{
     border: none;
     margin-left: 10px;
     margin-right: 10px;
-    padding: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: -15px
 }
