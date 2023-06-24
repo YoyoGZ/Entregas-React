@@ -12,6 +12,9 @@ const NavBar = () => {
             <nav className= "navBar">
                 <Link to ="/#" className="logo"><h1 className="titulo">The White Rabbit</h1></Link>
                     <ul className="itemNav">
+                    <li className="itemNav">
+                            <Link className="itemNav" to="/">Catálogo</Link>
+                        </li>
                         <li className="itemNav">
                             <Link className="itemNav" to="/genero/Clasico">Clasico</Link>
                         </li>

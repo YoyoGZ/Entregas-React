@@ -31,19 +31,23 @@ function countItems() {
    return total;
  }
 
-function countPrecioTotal(){
-   return 999;
+function countPrecioTotal() {
+   let total = 0;
+   cart.forEach((item) => {
+      total = item.precio
+   })
+   return total;
 }
-//  function clear() {
-
-//  }
+function clear() {
+setCart([]);
+}
 
 function removeItem(idDelete){
       setCart (cart.filter( item => item.id !== idDelete));
 }
 
  return(
-<cartContext.Provider value={ {cart, setCart, addItem, countItems, removeItem, countPrecioTotal} }>
+<cartContext.Provider value={ {cart, setCart, addItem, countItems, removeItem, countPrecioTotal, clear} }>
  {children}
 
 </cartContext.Provider>

@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
   background-image: url(/public/biblio1.png);
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -19,7 +19,7 @@ function App() {
               <Route path= "/ItemList/:id" element={<ItemDetailContainer/>} />
               <Route path= "/genero/:genero" element={<ItemListContainer/>} />
               <Route path= "/cart" element={<ViewCart/>} />
-              <Route path= "/ConfirmaCompra" element={<ConfirmaCompra/>} />
+              <Route path= "/ConfirmaCompra/:orderid" element={<ConfirmaCompra/>} />
               <Route path= "/Contacto" element={<h2>Err 404 - Pagina NO disponible</h2>}/>
             </Routes>  
         </BrowserRouter>

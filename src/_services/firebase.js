@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, getDoc, query, where} from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc} from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -47,6 +47,6 @@ return dataDocs;
 export async function createOrder(data){
     const orderCollectionRef = collection(db, "orders");
 
-    const respuesta = await (orderCollectionRef, data)
-    console.log("Orden Generada:", respuesta.id);
+    const respuesta = await addDoc(orderCollectionRef, data)
+    return respuesta.id
 }

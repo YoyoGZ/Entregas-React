@@ -5,7 +5,7 @@ function ConfirmaCompra() {
   return (
     <div className="Viewcart">
         <h2> Gracias por tu Compra</h2>
-        <p> Tu comprobante de Compra es : {orderid}</p>
+        <h2> Tu comprobante de Compra es : {orderid}</h2>
         <Link to ="/" className="btn-comprarMas"> Continuar comprando </Link>
     </div>
   )
